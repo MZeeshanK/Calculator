@@ -31,7 +31,7 @@ del.addEventListener('click', ()=> {
   let str = value.value;
   str = str.substring(0,str.length - 1);
   value.value = str;
-)}
+});
 
 equals.addEventListener('click',calculate)
 
