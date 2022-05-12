@@ -27,6 +27,12 @@ operations.forEach((operation)=>{
   })
 })
 
+del.addEventListener('click', ()=> {
+  let str = value.value;
+  str = str.substring(0,str.length - 1);
+  value.value = str;
+)}
+
 equals.addEventListener('click',calculate)
 
 function calculate(){
@@ -36,6 +42,7 @@ function calculate(){
   if(isNaN(a) || isNaN(b)){
     return ;
   }
+
   switch(preValue.value.substring(preValue.value.length-1))
   {
     case '+':
