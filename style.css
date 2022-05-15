@@ -207,6 +207,9 @@ a{
 
   @keyframes view {
     0% {
+      display: grid;
+    }
+    50%{
       display: invisible;
     }
     100% {
