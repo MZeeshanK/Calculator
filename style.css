@@ -177,6 +177,10 @@ a{
     animation:non-spin .5s forwards ease-out;
   }
 
+  .calc.spin .buttons,
+  .calc.non-spin .buttons{
+    animation:view .5s forwards ease;
+  }
   @keyframes spin {
     0% {
       transform: translateY(0) rotateY(0deg);
@@ -198,6 +202,15 @@ a{
     }
     100%{
       transform: translate(0) rotateY(0deg);
+    }
+  }
+
+  @keyframes view {
+    0% {
+      display: invisible;
+    }
+    100% {
+      display:grid;
     }
   }
 
