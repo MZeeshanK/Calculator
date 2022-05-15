@@ -12,11 +12,11 @@
 
 body{
   background:url('https://doeren.com/wp-content/uploads/2019/06/TDR-Accounting-Overview-CECL-Considerations.jpg') no-repeat center center/cover;
-  font-family: 'Courier New', Courier, sans-serif;
+  font-family: 'menlo', Courier, sans-serif;
   font-weight: bold;
   font-size: 20px;
   position: relative;
-  padding-top: 50px;
+  padding:20px 0;
 }
 
 html:before{
@@ -34,8 +34,6 @@ a{
   text-decoration: none;
 }
 
-
-
 .calc{
   background: var(--dark-color);
   display: flex;
@@ -47,9 +45,10 @@ a{
   border: #222 solid 5px;
   border-radius: 10px;
   box-shadow:  0 0 5px 2px #000;
-  height: 70vh;
+  height: fit-content;
   position: relative;
   z-index: 1;
+  font-size: 20px;
   }
 
   .values{
@@ -68,18 +67,12 @@ a{
     width: 100%;
     text-align: right;
     background: #000;
-    color: #fff;
-    overflow: initial;
+    color: #bbb;
     padding: 10px 20px;
-    font-size: 40px;
+    font-size: 25px;
     border: none;
     border-radius: 10px;
     height: 50%;
-  }
-
-  #value-pre{
-    font-size: 25px;
-    color: #777;
   }
 
   .value:focus{
@@ -90,12 +83,17 @@ a{
     color:#fff
   }
 
+  .output-pre.value{
+    font-size: 35px;
+    color: #fff;
+  }
+
   .buttons{
     display: grid;
     grid-template-columns: repeat(4,1fr);
     background: #000;
     overflow: hidden;
-    grid-gap:0 ;
+    grid-gap:5px;
     width: 100%;
     height: 100%;
     padding-top: 5px;
@@ -119,7 +117,7 @@ a{
     background: #111;
   }
 
-  .btn > i{
+  .btn > *{
     border-radius: 50%;
     height: 60px; 
     width: 60px;
@@ -134,6 +132,14 @@ a{
     display: none;
   }
 
+  .btn-complex{
+    font-size: 23px;  
+  }
+  
+  .btn #span{
+    display: flex;
+  }
+
   .btn-switch span{
     display: inline-flex;
     align-items: center;
@@ -145,7 +151,6 @@ a{
     transform: rotate(135deg);
     transition: all .2s ease-in-out;
   }
-  
   
   .btn-small{
     font-size: 5px;
@@ -162,6 +167,51 @@ a{
   .btn-switch:active span i { 
     background: #000;
     margin: 0 2px 0 2px;
+  }
+
+  .calc.spin{
+    animation: spin .5s forwards ease-out;
+  }
+
+  .calc.non-spin{
+    animation:non-spin .5s forwards ease-out;
+  }
+
+  @keyframes spin {
+    0% {
+      transform: translateY(0) rotateY(0deg);
+    }
+    50% {
+      transform: translateY(-15%) rotateY(180deg);
+    }
+    100%{
+      transform: translate(0) rotateY(360deg);
+    }
+  }
+
+  @keyframes non-spin {
+    0% {
+      transform: translateY(0) rotateY(0deg);
+    }
+    50% {
+      transform: translateY(-15%) rotateY(-180deg);
+    }
+    100%{
+      transform: translate(0) rotateY(0deg);
+    }
+  }
+
+  .btn-complex{
+    display: none;
+  }
+
+  .btn-show{
+    display: flex;
+  }
+
+  .btn-complex sup{
+    font-size: 12px;
+    transform: translateY(-50%);
   }
 
   #footer{
