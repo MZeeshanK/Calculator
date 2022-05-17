@@ -53,7 +53,7 @@ numbers.forEach((number)=>{
           }else{
             Let c = parseFloat(newStr),
             results;
-            switch(number.textContent(0,3)){
+            switch(number.textContent){
             case "Sin":
               result = Math.sin(c).toFixed(2)
               break;
