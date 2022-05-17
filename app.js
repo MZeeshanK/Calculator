@@ -51,7 +51,26 @@ numbers.forEach((number)=>{
               str += number.textContent + "()"
             }
           }else{
-            return ;
+            Let c = parseFloat(newStr)
+            switch(str.substring(0,3)){
+            case "Sin":
+              result = Math.sin(c).toFixed(2)
+              break;
+            case "Cos":
+              result = Math.cos(c).toFixed(2);
+              break;
+            case "Tan":
+              result = Math.tan(c).toFixed(2);
+              break;
+            case "Log":
+              result = Math.log(c).toFixed(2);
+              break;
+            default:
+              return;
+          }
+          newStr = result;
+          str = '';
+          preValue.value = newStr;
           }
         }else {
           if(str.slice(-1) === ")"){
