@@ -51,7 +51,8 @@ numbers.forEach((number)=>{
               str += number.textContent + "()"
             }
           }else{
-            Let c = parseFloat(newStr)
+            Let c = parseFloat(newStr),
+            results;
             switch(number.textContent(0,3)){
             case "Sin":
               result = Math.sin(c).toFixed(2)
