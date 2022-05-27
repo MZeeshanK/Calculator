@@ -16,6 +16,7 @@ body{
   font-weight: bold;
   font-size: 20px;
   position: relative;
+  overflow-y: scroll;
 }
 
 html:before{
@@ -205,35 +206,24 @@ a{
   }
 
   @keyframes spin {
-    0% {
-      transform: translateY(0) rotateY(0deg);
-      border: #000 solid 5px;
-    }
     50% {
-      transform: translateY(-15%) rotateY(180deg);
+      transform: translateY(-10%) rotateX(180deg) rotateY(180deg) rotateZ(180deg);
       border: #fff solid 5px;
     }
     100%{
-      transform: translate(0) rotateY(360deg);
-      border: #000 solid 5px;
+      transform: translateY(0) rotateX(180deg) rotateY(180deg) rotateZ(180deg);
     }
   }
 
   @keyframes non-spin {
-    0% {
-      transform: translateY(0) rotateY(0deg);
-      border: #000 solid 5px;
-    }
     50% {
-      transform: translateY(-15%) rotateY(-180deg);
+      transform: translateY(-15%) rotateX(-180deg) rotateY(-180deg) rotateZ(-180deg);
       border: #fff solid 5px;
     }
     100%{
-      transform: translate(0) rotateY(0deg);
-      border: #000 solid 5px;
+      transform: translateY(0%) rotateX(-180deg) rotateY(-180deg) rotateZ(-180deg);
     }
   }
-
 
   #footer{
     background: #000;
